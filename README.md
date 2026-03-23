@@ -52,7 +52,7 @@ Download the latest zip file from the [Release](https://github.com/GuiBranco/Via
 
 | Package | Version | Downloads |
 |------------------|:-------:|:-------:|
-| **ViaCEP** | [![ViaCEP NuGet Version](https://img.shields.io/nuget/v/ViaCep-SDK-dotnet.svg?style=flat)](https://www.nuget.org/packages/ViaCEP-SDK-dotnet) | [![ViaCEP NuGet Downloads](https://img.shields.io/nuget/dt/ViaCep-SDK-dotnet.svg?style=flat)](https://www.nuget.org/packages/ViaCEP-SDK-dotnet) |
+| **ViaCEP** | [![ViaCEP NuGet Version](https://img.shields.io/nuget/v/ViaCep.svg?style=flat)](https://www.nuget.org/packages/ViaCEP) | [![ViaCEP NuGet Downloads](https://img.shields.io/nuget/dt/ViaCep.svg?style=flat)](https://www.nuget.org/packages/ViaCEP) |
 
 ---
 
