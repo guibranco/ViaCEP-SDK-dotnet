@@ -44,9 +44,9 @@ A .NET client wrapper for both .NET Core & .NET Framework projects of [Via CEP A
 
 ### Github Releases
 
-[![GitHub last release](https://img.shields.io/github/release-date/guibranco/ViaCep-SDK-dotnet.svg?style=flat)](https://github.com/guibranco/ViaCep-SDK-dotnet) [![Github All Releases](https://img.shields.io/github/downloads/guibranco/ViaCEP-SDK-dotnettotal.svg?style=flat)](https://github.com/guibranco/ViaCep-SDK-dotnet)
+[![GitHub last release](https://img.shields.io/github/release-date/guibranco/ViaCep-SDK-dotnet.svg?style=flat)](https://github.com/guibranco/ViaCep-SDK-dotnet) [![Github All Releases](https://img.shields.io/github/downloads/guibranco/ViaCEP-SDK-dotnet/total.svg?style=flat)](https://github.com/guibranco/ViaCep-SDK-dotnet)
 
-Download the latest zip file from the [Release](https://github.com/GuiBranco/ViaCEP-SDK-dotnetreleases) page.
+Download the latest zip file from the [Release](https://github.com/GuiBranco/ViaCEP-SDK-dotnet/releases) page.
 
 ### Nuget package manager
 
