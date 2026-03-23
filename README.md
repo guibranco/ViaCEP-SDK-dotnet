@@ -5,13 +5,13 @@ A .NET client wrapper for both .NET Core & .NET Framework projects of [Via CEP A
 [![GitHub license](https://img.shields.io/github/license/guibranco/ViaCep-SDK-dotnet)](https://github.com/guibranco/ViaCep-SDK-dotnet)
 [![time tracker](https://wakatime.com/badge/github/guibranco/ViaCep-SDK-dotnet.svg)](https://wakatime.com/badge/github/guibranco/ViaCEP-SDK-dotnet)
 
-![Via CEP](https://raw.githubusercontent.com/guibranco/ViaCEP-SDK-dotnetmain/logo.png)
+![Via CEP](https://raw.githubusercontent.com/guibranco/ViaCEP-SDK-dotnet/main/logo.png)
 
 ## CI/CD
 
 | Build status | Last commit | Tests | Coverage | Code Smells | LOC |
 |--------------|-------------|-------|----------|-------------|-----|
-| [![Build status](https://ci.appveyor.com/api/projects/status/9jnsy1e08jhyxl7j/branch/main?svg=true)](https://ci.appveyor.com/project/guibranco/ViaCep-SDK-dotnet) | [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/ViaCEP-SDK-dotnet/main)](https://github.com/guibranco/ViaCep-SDK-dotnet) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/guibranco/ViaCEP-SDK-dotnet/main?compact_message)](https://ci.appveyor.com/project/guibranco/ViaCep-SDK-dotnet) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCep-SDK-dotnet\&metric=coverage)](https://sonarcloud.io/dashboard?id=guibranco_ViaCep-SDK-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCep-SDK-dotnet\&metric=code_smells)](https://sonarcloud.io/dashboard?id=guibranco_ViaCep-SDK-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCep-SDK-dotnet\&metric=ncloc)](https://sonarcloud.io/dashboard?id=guibranco_ViaCep-SDK-dotnet)
+| [![Build status](https://ci.appveyor.com/api/projects/status/9jnsy1e08jhyxl7j/branch/main?svg=true)](https://ci.appveyor.com/project/guibranco/ViaCep-SDK-dotnet) | [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/ViaCEP-SDK-dotnet/main)](https://github.com/guibranco/ViaCep-SDK-dotnet) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/guibranco/ViaCEP-SDK-dotnet/main?compact_message)](https://ci.appveyor.com/project/guibranco/ViaCep-SDK-dotnet) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=coverage)](https://sonarcloud.io/dashboard?id=guibranco_ViaCep-SDK-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=code_smells)](https://sonarcloud.io/dashboard?id=guibranco_ViaCep-SDK-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=ncloc)](https://sonarcloud.io/dashboard?id=guibranco_ViaCep-SDK-dotnet)
 
 ## Code Quality
 
@@ -24,17 +24,17 @@ A .NET client wrapper for both .NET Core & .NET Framework projects of [Via CEP A
 [![Maintainability](https://api.codeclimate.com/v1/badges/93ba8c7ae3e86ca7e2a7/maintainability)](https://codeclimate.com/github/guibranco/ViaCEP-SDK-dotnetmaintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/93ba8c7ae3e86ca7e2a7/test_coverage)](https://codeclimate.com/github/guibranco/ViaCEP-SDK-dotnettest_coverage)
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=alert_status)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=alert_status)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
 
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=sqale_index)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=sqale_index)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
 
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=security_rating)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=security_rating)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
 
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=bugs)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet\&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=bugs)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=guibranco_ViaCEP-SDK-dotnet&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=guibranco_ViaCEP)
 
 [![DeepSource](https://app.deepsource.com/gh/guibranco/ViaCep-SDK-dotnet.svg/?label=active+issues\&show_trend=true\&token=84Hhxk-J1hIHiVC_ojm17J3q)](https://app.deepsource.com/gh/guibranco/ViaCEP-SDK-dotnet?ref=repository-badge)
 
