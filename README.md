@@ -3,7 +3,7 @@
 A .NET client wrapper for both .NET Core & .NET Framework projects of [Via CEP API](https://viacep.com.br)
 
 [![GitHub license](https://img.shields.io/github/license/guibranco/ViaCep-SDK-dotnet)](https://github.com/guibranco/ViaCep-SDK-dotnet)
-[![time tracker](https://wakatime.com/badge/github/guibranco/ViaCep-SDK-dotnet.svg)](https://wakatime.com/badge/github/guibranco/ViaCEP-SDK-dotnet)
+[![wakatime](https://wakatime.com/badge/github/guibranco/ViaCEP-SDK-dotnet.svg)](https://wakatime.com/badge/github/guibranco/ViaCEP-SDK-dotnet)
 
 ![Via CEP](https://raw.githubusercontent.com/guibranco/ViaCEP-SDK-dotnet/main/logo.png)
 
