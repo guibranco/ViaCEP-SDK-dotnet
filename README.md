@@ -99,7 +99,7 @@ foreach(var result in results){
 
 ## Changelog
 
-*   2024-09-02: Add explicitly support to .NET 6.0 and .NET 8.0 [#154](https://github.com/guibranco/ViaCEP-SDK-dotnet/issues/154) by [@guibranco](https://github.com/guibranco)
+*   2024-09-02: Add explicit support to .NET 6.0 and .NET 8.0 [#154](https://github.com/guibranco/ViaCEP-SDK-dotnet/issues/154) by [@guibranco](https://github.com/guibranco)
 *   2023-07-28: Add integration tests [#71](https://github.com/guibranco/ViaCEP-SDK-dotnet/issues/71) by [@Riju-bak](https://github.com/Riju-bak)
 *   2023-03-03: Update dependencies, change branch name, update logo. [@guibranco](https://github.com/guibranco)
 *   2021-06-21: Update dependencies version. [@guibranco](https://github.com/guibranco)
