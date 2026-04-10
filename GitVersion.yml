@@ -1,0 +1,17 @@
+mode: Mainline
+branches:
+  main:
+    regex: ^main$
+    increment: Patch
+  feature:
+    regex: ^feature[/-]
+    increment: Minor
+  hotfix:
+    regex: ^hotfix[/-]
+    increment: Patch
+  chore:
+    regex: ^chore[/-]
+    increment: None
+ignore:
+  sha: []
+merge-message-formats: {}
