@@ -27,6 +27,12 @@ jobs:
         id: gitversion
         uses: gittools/actions/gitversion/execute@v4.4.2
 
+      - name: 📣 Print resolved version
+        run: |
+          echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
+          echo "All outputs:"
+          echo "${{ toJson(steps.gitversion.outputs) }}"
+
       - name: 🧰 Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
@@ -36,10 +42,13 @@ jobs:
         run: dotnet restore
 
       - name: 🏗️ Build project
-        run: dotnet build Src/ViaCep/ViaCep.csproj --no-restore --configuration Release /p:Version=${{ steps.gitversion.outputs.nuGetVersion }}
+        run: dotnet build Src/ViaCep/ViaCep.csproj --no-restore --configuration Release /p:Version=${{ steps.gitversion.outputs.fullSemVer }}
 
       - name: 📦 Pack NuGet package
-        run: dotnet pack Src/ViaCep/ViaCep.csproj --no-build --configuration Release /p:Version=${{ steps.gitversion.outputs.nuGetVersion }} --output ./artifacts
+        run: dotnet pack Src/ViaCep/ViaCep.csproj --no-build --configuration Release /p:Version=${{ steps.gitversion.outputs.fullSemVer }} --output ./artifacts
 
       - name: 🚀 Push package to NuGet
-        run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push ./artifacts/*.nupkg \
+          --api-key ${{ secrets.NUGET_API_KEY }} \
+          --source https://api.nuget.org/v3/index.json \
+          --skip-duplicate
