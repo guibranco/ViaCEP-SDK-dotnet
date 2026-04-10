@@ -1,0 +1,43 @@
+name: Deploy to NuGet
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Src/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v1
+        with:
+          versionSpec: '5.x'
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v1
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build Src/ViaCep/ViaCep.csproj --no-restore --configuration Release /p:Version=${{ steps.gitversion.outputs.nuGetVersion }}
+
+      - name: Pack
+        run: dotnet pack Src/ViaCep/ViaCep.csproj --no-build --configuration Release /p:Version=${{ steps.gitversion.outputs.nuGetVersion }} --output ./artifacts
+
+      - name: Push to NuGet
+        run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
