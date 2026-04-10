@@ -1,17 +1,6 @@
-mode: Mainline
-branches:
-  main:
-    regex: ^main$
-    increment: Patch
-  feature:
-    regex: ^feature[/-]
-    increment: Minor
-  hotfix:
-    regex: ^hotfix[/-]
-    increment: Patch
-  chore:
-    regex: ^chore[/-]
-    increment: None
-ignore:
-  sha: []
-merge-message-formats: {}
+workflow: GitHubFlow/v1
+mode: ContinuousDeployment
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+assembly-informational-format: '{MajorMinorPatch}{PreReleaseTagWithDash}+{ShortSha}'
+tag-prefix: '[vV]'
