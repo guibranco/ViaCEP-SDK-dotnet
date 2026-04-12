@@ -2,30 +2,111 @@ version: 2
 
 updates:
 
-- package-ecosystem: "nuget"
-  directory: "/"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 50
-  assignees:
-    - "guibranco"
-  reviewers:
-    - "guibranco"
-  labels:
-    - "nuget"
-    - "packages"
-    - ".NET"
-    - "dependencies"
+  #
+  # NuGet dependencies
+  #
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: weekly
 
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 50
-  assignees:
-    - "guibranco"
-  reviewers:
-    - "guibranco"
-  labels:
-    - "github-actions"
-    - "dependencies"
+    open-pull-requests-limit: 10
+
+    assignees:
+      - "guibranco"
+
+    reviewers:
+      - "guibranco"
+
+    labels:
+      - "nuget"
+      - "packages"
+      - ".NET"
+      - "dependencies"
+
+    groups:
+
+      #
+      # Microsoft packages
+      #
+      microsoft:
+        patterns:
+          - "Microsoft.*"
+
+      #
+      # ASP.NET Core stack
+      #
+      aspnetcore:
+        patterns:
+          - "Microsoft.AspNetCore.*"
+
+      #
+      # Extensions ecosystem
+      #
+      extensions:
+        patterns:
+          - "Microsoft.Extensions.*"
+
+      #
+      # Test stack
+      #
+      testing:
+        patterns:
+          - "xunit*"
+          - "FluentAssertions*"
+          - "Moq*"
+          - "coverlet*"
+          - "Microsoft.NET.Test.Sdk"
+
+      #
+      # Logging stack
+      #
+      logging:
+        patterns:
+          - "Serilog*"
+          - "NLog*"
+
+      #
+      # OpenTelemetry
+      #
+      telemetry:
+        patterns:
+          - "OpenTelemetry*"
+
+      #
+      # Azure SDK
+      #
+      azure:
+        patterns:
+          - "Azure.*"
+
+      #
+      # Everything else
+      #
+      dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+
+    schedule:
+      interval: weekly
+
+    open-pull-requests-limit: 5
+
+    assignees:
+      - "guibranco"
+
+    reviewers:
+      - "guibranco"
+
+    labels:
+      - "github-actions"
+      - "dependencies"
+
+    groups:
+
+      github-actions:
+        patterns:
+          - "*"
