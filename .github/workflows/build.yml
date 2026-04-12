@@ -11,27 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: Setup Java
+      - name: ☕ Setup Java runtime
         uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: temurin
 
-      - name: Setup .NET
+      - name: 🧰 Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
             6.0.x
             8.0.x
 
-      - name: Install SonarCloud scanner
+      - name: 🔧 Install SonarCloud scanner
         run: dotnet tool install --global dotnet-sonarscanner
 
-      - name: Cache NuGet packages
+      - name: 💾 Cache NuGet packages
         uses: actions/cache@v4
         with:
           path: ~/.nuget/packages
@@ -39,10 +40,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
-      - name: Restore
+      - name: 📦 Restore dependencies
         run: dotnet restore
 
-      - name: Begin SonarCloud analysis
+      - name: 🔍 Begin SonarCloud analysis
         run: |
           dotnet sonarscanner begin \
             /k:"guibranco_ViaCEP-SDK-dotnet" \
@@ -53,18 +54,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build
+      - name: 🏗️ Build solution
         run: dotnet build --no-restore --configuration Release
 
-      - name: Test
+      - name: 🧪 Run tests with coverage
         run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
 
-      - name: End SonarCloud analysis
+      - name: 📊 End SonarCloud analysis
         run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload coverage to Codecov
+      - name: ☂️ Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
