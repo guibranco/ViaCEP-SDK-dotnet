@@ -67,7 +67,7 @@ jobs:
             --no-build \
             --configuration Release \
             /p:CollectCoverage=true \
-            /p:CoverletOutputFormat="opencover,cobertura"
+            /p:CoverletOutputFormat=opencover%2ccobertura
 
       - name: 📊 End SonarCloud analysis
         run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
