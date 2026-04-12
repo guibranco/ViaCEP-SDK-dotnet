@@ -1,19 +1,22 @@
-name: Build and Test
+name: Build, Test and Analyze
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
   build:
+    name: Build, Test and Analyze
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@v6
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
       - name: ☕ Setup Java runtime
@@ -29,6 +32,9 @@ jobs:
 
       - name: 🔧 Install SonarCloud scanner
         run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: 📡 Install DeepSource scanner
+        run: curl https://deepsource.io/cli | sh
 
       - name: 💾 Cache NuGet packages
         uses: actions/cache@v5
@@ -56,7 +62,12 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: 🧪 Run tests with coverage
-        run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        run: |
+          dotnet test \
+            --no-build \
+            --configuration Release \
+            /p:CollectCoverage=true \
+            /p:CoverletOutputFormat=opencover%2ccobertura
 
       - name: 📊 End SonarCloud analysis
         run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
@@ -67,3 +78,19 @@ jobs:
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: 📈 Report coverage to DeepSource
+        if: >-
+          (
+            github.event_name == 'pull_request' &&
+            github.event.pull_request.head.repo.full_name == github.repository
+          ) || (
+            github.event_name == 'workflow_dispatch'
+          )
+        env:
+          DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
+        run: |
+          ./bin/deepsource report \
+            --analyzer test-coverage \
+            --key csharp \
+            --value-file ./Tests/ViaCep.Tests/coverage.cobertura.xml
